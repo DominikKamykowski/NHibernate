@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping namespace="kolokwium_.Mapping" assembly="kolokwium_"
+xmlns="urn:nhibernate-mapping-2.2">
+	<class name="Post" table="Post">
+		<id name="Id" column="Id" type="Int32">
+			<generator class="native" />
+		</id>
+		<property name="Date" type="datetime" column="Date" />
+		<property name="Topic" type="String" column="Topic"  />
+		<property name="Description" type="String" column="Description"  />
+		<property name="isPremium" type="boolean" column="isPremium"  />
+
+		<many-to-one name="Type" class="kolokwium_.Mapping.TypePost" column ="TypePostId" fetch="select" cascade="none"></many-to-one>
+
+
+	</class>
+</hibernate-mapping>
